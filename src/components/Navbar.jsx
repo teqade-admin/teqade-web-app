@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className="logo">
                 <img src="logo-dark-bg.png" alt="Teqade Logo" style={{ height: "30px", marginRight: "10px" }} />
                 <div className="teqade-logo"><i>TEQADE</i></div>
-                <p><i> Delivering the future </i></p>
+                <p className="slogan typewriter">Delivering the Future</p>
             </div>
 
             {/* Mobile menu button */}

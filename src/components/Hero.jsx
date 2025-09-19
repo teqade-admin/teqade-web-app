@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
   const slides = [
@@ -27,20 +27,25 @@ export default function Hero() {
   const totalSlides = slides.length;
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? totalSlides - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === totalSlides - 1 ? 0 : prev + 1
-    );
+    setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   };
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
   };
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // 5000ms = 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []); // Empty dependency array ensures it runs once
 
   return (
     <section id="home" className="hero-slider">
