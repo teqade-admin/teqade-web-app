@@ -6,7 +6,7 @@ export default function Hero() {
       img: "/sm.jpg",
       title: "AI for Small Finance Bank",
       subtitle: "Secure and Efficient Banking for the Digital Age.",
-      link: "sfb-offerings.pdf",
+      link: "SFB-Teqade.pdf",
     },
     {
       img: "/cattle-m.jpg",
